@@ -23,7 +23,19 @@ const gridSquares = document.querySelectorAll('.grid-squares');
 gridSquares.forEach((gridSquare) => {
     gridSquare.addEventListener('mouseover', paintGrid);
 });
-    
+
 function paintGrid(e) {
     e.target.style.backgroundColor = color;
 }
+
+function clearGrid(e) {
+    gridSquares.forEach((gridSquare) => {
+        gridSquare.style.backgroundColor = 'white';
+    });
+}
+
+const clear = document.createElement('button');
+clear.textContent = "Clear";
+container.appendChild(clear);
+
+clear.addEventListener('click', clearGrid);
