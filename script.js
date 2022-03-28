@@ -16,12 +16,14 @@ for (let i = 1; i <= nGridSquares; i++) {
 
 let color = 'blue';
 
+// Make div squares appear as a grid 
 drawContainer.style.gridTemplateColumns = 'repeat(' + nGridSquares + ', 1fr)';
 
 const gridSquares = document.querySelectorAll('.grid-squares');
 gridSquares.forEach((gridSquare) => {
-    gridSquare.addEventListener('mouseover', function (e) {
-        e.target.style.backgroundColor = color;
-    });
+    gridSquare.addEventListener('mouseover', paintGrid);
 });
     
+function paintGrid(e) {
+    e.target.style.backgroundColor = color;
+}
