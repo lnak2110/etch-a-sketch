@@ -4,6 +4,7 @@ const drawContainer = document.createElement('div');
 const clear = document.createElement('button');
 
 drawContainer.classList.add('draw-container');
+clear.classList.add('button');
 
 clear.textContent = 'Clear';
 
