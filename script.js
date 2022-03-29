@@ -12,7 +12,7 @@ container.appendChild(drawContainer);
 container.appendChild(clear);
 
 let nGridSquares = 16;
-let color = 'blue';
+let color = 'black';
 
 function createGrid(nGridSquares) {
     for (let i = 1; i <= (nGridSquares * nGridSquares); i++) {
