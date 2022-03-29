@@ -1,15 +1,17 @@
 const container = document.querySelector('#container');
 const size = document.getElementById('size');
 const drawContainer = document.createElement('div');
+const clear = document.createElement('button');
+
 drawContainer.classList.add('draw-container');
+
+clear.textContent = 'Clear';
+
 container.appendChild(drawContainer);
+container.appendChild(clear);
 
 let nGridSquares = 16;
-
 let color = 'blue';
-
-createGrid(nGridSquares);
-
 
 function createGrid(nGridSquares) {
     for (let i = 1; i <= (nGridSquares * nGridSquares); i++) {
@@ -20,7 +22,8 @@ function createGrid(nGridSquares) {
     }    
 }
 
-const gridSquares = document.querySelectorAll('.grid-squares');
+createGrid(nGridSquares);
+
 function paintGrid() {
     const gridSquares = document.querySelectorAll('.grid-squares');
     gridSquares.forEach((gridSquare) => {
@@ -41,6 +44,8 @@ function clearGrid() {
     paintGrid();
 }
 
+clear.addEventListener('click', clearGrid);
+
 function resize() {
     size.addEventListener('change', (e) => {
         clearGrid();
@@ -50,11 +55,3 @@ function resize() {
 }
 
 resize();
-
-const clear = document.createElement('button');
-clear.textContent = 'Clear';
-clear.addEventListener('click', clearGrid);
-container.appendChild(clear);
-
-
-
